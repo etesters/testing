@@ -384,57 +384,57 @@ class GBClass
 	}
 	private function raws($data)
 	{
-	$content=null;
-	$headers=array();
-	$fields=explode("\r\n", preg_replace('/\x0D\x0A[\x09\x20]+/', ' ', $data));
-	foreach($fields as $field){
-	if(preg_match('/([^:]+): (.+)/m', $field, $match)){
-	$match[1] = preg_replace('/(?<=^|[\x09\x20\x2D])./e', 'strtoupper("\0")', strtolower(trim($match[1])));
-	if(isset($headers[$match[1]])){
-	$headers[$match[1]]=array($headers[$match[1]], $match[2]);
-	}else{
-	$headers[$match[1]]=trim($match[2]);
-	}
-	}else{
-	if(strpos($field, 'HTTP/1.1')===false){
-	$content.=$field . "\n";
-	}
-	}
-	}
-	return array(
-	'content'=>$content,
-	'headers'=>$headers,
-	);
+		$content=null;
+		$headers=array();
+		$fields=explode("\r\n", preg_replace('/\x0D\x0A[\x09\x20]+/', ' ', $data));
+		foreach($fields as $field){
+			if(preg_match('/([^:]+): (.+)/m', $field, $match)){
+				$match[1] = preg_replace('/(?<=^|[\x09\x20\x2D])./e', 'strtoupper("\0")', strtolower(trim($match[1])));
+				if(isset($headers[$match[1]])){
+					$headers[$match[1]]=array($headers[$match[1]], $match[2]);
+				}else{
+					$headers[$match[1]]=trim($match[2]);
+				}
+			}else{
+				if(strpos($field, 'HTTP/1.1')===false){
+					$content.=$field . "\n";
+				}
+			}
+		}
+		return array(
+			'content'=>$content,
+			'headers'=>$headers,
+		);
 	}
 	private function cleanDirectory($directory)
 	{
-	if((empty($directory)) || ($directory==='/')) return '';		
-	if($directory[0]!=='/') $directory='/'.$directory;                   
-	$last=substr($directory, strlen($directory) - 1);
-	if($last!=='/') $directory.='/';
-	$directory=str_replace(' ', '_', $directory);
-	$directory=substr($directory, 1);		
-	return $directory;
+		if((empty($directory)) || ($directory==='/')) return '';		
+		if($directory[0]!=='/') $directory='/'.$directory;                   
+		$last=substr($directory, strlen($directory) - 1);
+		if($last!=='/') $directory.='/';
+		$directory=str_replace(' ', '_', $directory);
+		$directory=substr($directory, 1);		
+		return $directory;
 	}
 	private function getAllList($directory='/')
 	{
-	$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '?format=' . $this->format . '&prefix=' . urlencode($this->cleanDirectory($directory)) . '&data=';
-	$this->_headers=array();
-	$this->_headers[]='X-Auth-Token: ' . $this->_token;
-	return $this->execute('GET');
+		$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '?format=' . $this->format . '&prefix=' . urlencode($this->cleanDirectory($directory)) . '&data=';
+		$this->_headers=array();
+		$this->_headers[]='X-Auth-Token: ' . $this->_token;
+		return $this->execute('GET');
 	}
 	private function getListObject($directory='/')
 	{
-	$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '?format=' . $this->format . '&prefix=' . urlencode($this->cleanDirectory($directory)) . '&data=' . self::OBJECTS;
-	$this->_headers=array();
-	$this->_headers[]='X-Auth-Token: ' . $this->_token;
-	return $this->execute('GET');
+		$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '?format=' . $this->format . '&prefix=' . urlencode($this->cleanDirectory($directory)) . '&data=' . self::OBJECTS;
+		$this->_headers=array();
+		$this->_headers[]='X-Auth-Token: ' . $this->_token;
+		return $this->execute('GET');
 	}
 	private function getListDirectory($directory='/')
 	{
-	$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '?format=' . $this->format . '&prefix=' . urlencode($this->cleanDirectory($directory)) . '&data=' . self::DIRECTORIES;
-	$this->_headers=array();
-	$this->_headers[]='X-Auth-Token: ' . $this->_token;
-	return $this->execute('GET');
+		$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '?format=' . $this->format . '&prefix=' . urlencode($this->cleanDirectory($directory)) . '&data=' . self::DIRECTORIES;
+		$this->_headers=array();
+		$this->_headers[]='X-Auth-Token: ' . $this->_token;
+		return $this->execute('GET');
 	}
 }
