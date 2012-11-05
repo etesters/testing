@@ -175,14 +175,14 @@ class GBClass
 	*/ 
 	public function deleteDirectory($name, $directory='/')
 	{
-	if($this->_token===null){
-	$this->auth();			
-	}
-	$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '/' . urlencode($this->cleanDirectory($directory) . $name);
-	$this->_headers=array();
-	$this->_headers[]='X-Auth-Token: ' . $this->_token;
-	$data=$this->execute("DELETE", true);
-	return $data['headers'];
+		if($this->_token===null){
+			$this->auth();			
+		}
+		$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '/' . urlencode($this->cleanDirectory($directory) . $name);
+		$this->_headers=array();
+		$this->_headers[]='X-Auth-Token: ' . $this->_token;
+		$data=$this->execute("DELETE", true);
+		return $data['headers'];
 	}
 	/**
 	* Creating a new directory
@@ -198,15 +198,15 @@ class GBClass
 	*/ 
 	public function createDirectory($name, $directory='/')
 	{
-	if($this->_token===null){
-	$this->auth();			
-	}
-	$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '/' . urlencode($this->cleanDirectory($directory) . $name);
-	$this->_action=self::DIRECTORIES;
-	$this->_headers=array();
-	$this->_headers[]='X-Auth-Token: ' . $this->_token;		
-	$data=$this->execute("PUT", true);
-	return $data['headers'];
+		if($this->_token===null){
+			$this->auth();			
+		}
+		$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '/' . urlencode($this->cleanDirectory($directory) . $name);
+		$this->_action=self::DIRECTORIES;
+		$this->_headers=array();
+		$this->_headers[]='X-Auth-Token: ' . $this->_token;		
+		$data=$this->execute("PUT", true);
+		return $data['headers'];
 	}
 	/**
 	* Uploading an object
@@ -224,17 +224,17 @@ class GBClass
 	*/ 
 	public function putObject($object, $directory='/', $targetNodeId=null)
 	{
-	if($this->_token===null){
-	$this->auth();
-	}
-	$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '/' . urlencode($this->cleanDirectory($directory) . $object['name']);
-	$this->_action=self::OBJECTS;
-	$this->_object=$object;
-	$this->_headers=array();
-	$this->_headers[]='X-Auth-Token: ' . $this->_token;
-	if($targetNodeId!==null || (!empty($targetNodeId))) $this->_headers[]='X-Target-Node: ' . $targetNodeId;
-	$data=$this->execute("PUT", true);
-	return $data['headers'];
+		if($this->_token===null){
+			$this->auth();
+		}
+		$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '/' . urlencode($this->cleanDirectory($directory) . $object['name']);
+		$this->_action=self::OBJECTS;
+		$this->_object=$object;
+		$this->_headers=array();
+		$this->_headers[]='X-Auth-Token: ' . $this->_token;
+		if($targetNodeId!==null || (!empty($targetNodeId))) $this->_headers[]='X-Target-Node: ' . $targetNodeId;
+		$data=$this->execute("PUT", true);
+		return $data['headers'];
 	}
 	/**
 	* Rename an Object
@@ -251,16 +251,16 @@ class GBClass
 	*/ 
 	public function renameObject($oldName, $newName, $directory='/')
 	{
-	if($this->_token===null){
-	$this->auth();
-	}
-	$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '/' . urlencode($this->cleanDirectory($directory) . $newName);
-	$this->_action=self::OBJECT_RENAME;
-	$this->_headers=array();
-	$this->_headers[]='X-Auth-Token: ' . $this->_token;
-	$this->_headers[]='X-Copy-From: ' . $this->_appid . '/' . urlencode($this->cleanDirectory($directory) . $oldName);
-	$data=$this->execute("PUT", true);
-	return $data['headers'];
+		if($this->_token===null){
+			$this->auth();
+		}
+		$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '/' . urlencode($this->cleanDirectory($directory) . $newName);
+		$this->_action=self::OBJECT_RENAME;
+		$this->_headers=array();
+		$this->_headers[]='X-Auth-Token: ' . $this->_token;
+		$this->_headers[]='X-Copy-From: ' . $this->_appid . '/' . urlencode($this->cleanDirectory($directory) . $oldName);
+		$data=$this->execute("PUT", true);
+		return $data['headers'];
 	}
 	/**
 	* Deleting an Object
@@ -276,14 +276,14 @@ class GBClass
 	*/ 
 	public function deleteObject($name, $directory='/')
 	{
-	if($this->_token===null){
-	$this->auth();
-	}
-	$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '/' . urlencode($this->cleanDirectory($directory) . $name);
-	$this->_headers=array();
-	$this->_headers[]='X-Auth-Token: ' . $this->_token;
-	$data=$this->execute("DELETE", true);
-	return $data['headers'];
+		if($this->_token===null){
+			$this->auth();
+		}
+		$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '/' . urlencode($this->cleanDirectory($directory) . $name);
+		$this->_headers=array();
+		$this->_headers[]='X-Auth-Token: ' . $this->_token;
+		$data=$this->execute("DELETE", true);
+		return $data['headers'];
 	}
 	/**
 	* Moving an Object
@@ -299,16 +299,16 @@ class GBClass
 	*/ 
 	public function moveObject($name, $source, $destination)
 	{
-	if($this->_token===null){
-	$this->auth();
-	}
-	$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '/' . urlencode($this->cleanDirectory($destination) . $name);
-	$this->_action=self::OBJECT_RENAME;
-	$this->_headers=array();
-	$this->_headers[]='X-Auth-Token: ' . $this->_token;
-	$this->_headers[]='X-Copy-From: ' . $this->_appid . '/' . urlencode($this->cleanDirectory($source) . $name);
-	$data=$this->execute("PUT", true);
-	return $data['headers'];
+		if($this->_token===null){
+			$this->auth();
+		}
+		$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '/' . urlencode($this->cleanDirectory($destination) . $name);
+		$this->_action=self::OBJECT_RENAME;
+		$this->_headers=array();
+		$this->_headers[]='X-Auth-Token: ' . $this->_token;
+		$this->_headers[]='X-Copy-From: ' . $this->_appid . '/' . urlencode($this->cleanDirectory($source) . $name);
+		$data=$this->execute("PUT", true);
+		return $data['headers'];
 	}
 	/**
 	* Downloading an Object
@@ -324,20 +324,20 @@ class GBClass
 	*/ 
 	public function downloadObject($name, $source)
 	{
-	if($this->_token===null){
-	$this->auth();
-	}
-	$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '/' . urlencode($this->cleanDirectory($source) . $name);
-	$this->_headers=array();
-	$this->_headers[]='X-Auth-Token: ' . $this->_token;
-	$data=$this->execute("GET");
-	return $data;
+		if($this->_token===null){
+			$this->auth();
+		}
+		$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/' . $this->_appid . '/' . urlencode($this->cleanDirectory($source) . $name);
+		$this->_headers=array();
+		$this->_headers[]='X-Auth-Token: ' . $this->_token;
+		$data=$this->execute("GET");
+		return $data;
 	}
 
 	private function setAuthData($appid, $appkey)
 	{
-	$this->_appid=$appid;
-	$this->_appkey=$appkey;
+		$this->_appid=$appid;
+		$this->_appkey=$appkey;
 	}
 	private function execute($verb, $headers=false)
 	{
