@@ -55,13 +55,13 @@ class GBClass
 	*/ 
 	public function __construct($appid, $appkey)
 	{
-	if($appid==='' || $appid==null){
-	die('Application Id cannot be empty.');		
-	}elseif($appkey==='' || $appkey===null){
-	die('Application Key cannot be empty.');
-	}else{
-	$this->setAuthData($appid, $appkey);
-	}
+		if($appid==='' || $appid==null){
+			die('Application Id cannot be empty.');		
+		}elseif($appkey==='' || $appkey===null){
+			die('Application Key cannot be empty.');
+		}else{
+			$this->setAuthData($appid, $appkey);
+		}
 	}
 	/**
 	* Setting the Token Value
@@ -89,9 +89,9 @@ class GBClass
 	*/
 	public function info()
 	{
-	$this->_url=$this->_protocol . $this->_host . '/' . $this->_version;
-	$this->_headers[]='Content-Type: application/' . $this->format;		
-	return $this->execute('GET');
+		$this->_url=$this->_protocol . $this->_host . '/' . $this->_version;
+		$this->_headers[]='Content-Type: application/' . $this->format;		
+		return $this->execute('GET');
 	}
 	/**
 	* Get the list of nodes of GRIDBLAZE
