@@ -341,46 +341,46 @@ class GBClass
 	}
 	private function execute($verb, $headers=false)
 	{
-	$ch=curl_init();
-	curl_setopt($ch, CURLOPT_URL, $this->_url);
-	curl_setopt($ch, CURLOPT_USERAGENT, 'GBClass');
-	curl_setopt($ch, CURLOPT_HTTPHEADER, $this->_headers);
-	curl_setopt($ch, CURLOPT_HEADER, $headers);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	if($this->_protocol==='https://'){
-	curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-	}
-	switch($verb){
-	case "GET":
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $verb);
-	break;
-	case "POST":
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $verb);
-	break;
-	case "DELETE":
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $verb);
-	break;
-	case "PUT":
-	if($this->_action===self::DIRECTORIES || $this->_action===self::OBJECT_RENAME){
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $verb);
-	}elseif($this->_action===self::OBJECTS){
-	$file=$this->_object['tmp_name'];
-	$fhandle=fopen($this->_object['tmp_name'], "rb");
-	curl_setopt($ch, CURLOPT_PUT, true);
-	curl_setopt($ch, CURLOPT_INFILESIZE, filesize($file));
-	curl_setopt($ch, CURLOPT_INFILE, $fhandle);
-	curl_setopt($ch, CURLOPT_VERBOSE, true);
-	}
-	break;
-	}
-	$response=curl_exec($ch);
-	curl_close($ch);
-	if($headers){
-	return $this->raws($response);
-	}else{
-	return $response;
-	}
+		$ch=curl_init();
+		curl_setopt($ch, CURLOPT_URL, $this->_url);
+		curl_setopt($ch, CURLOPT_USERAGENT, 'GBClass');
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $this->_headers);
+		curl_setopt($ch, CURLOPT_HEADER, $headers);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		if($this->_protocol==='https://'){
+			curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		}
+		switch($verb){
+			case "GET":
+				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $verb);
+				break;
+			case "POST":
+				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $verb);
+				break;
+			case "DELETE":
+				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $verb);
+				break;
+			case "PUT":
+				if($this->_action===self::DIRECTORIES || $this->_action===self::OBJECT_RENAME){
+					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $verb);
+				}elseif($this->_action===self::OBJECTS){
+					$file=$this->_object['tmp_name'];
+					$fhandle=fopen($this->_object['tmp_name'], "rb");
+					curl_setopt($ch, CURLOPT_PUT, true);
+					curl_setopt($ch, CURLOPT_INFILESIZE, filesize($file));
+					curl_setopt($ch, CURLOPT_INFILE, $fhandle);
+					curl_setopt($ch, CURLOPT_VERBOSE, true);
+				}
+				break;
+		}
+		$response=curl_exec($ch);
+		curl_close($ch);
+		if($headers){
+			return $this->raws($response);
+		}else{
+			return $response;
+		}
 	}
 	private function raws($data)
 	{
