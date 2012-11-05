@@ -108,9 +108,9 @@ class GBClass
 	*/
 	public function node($id='')
 	{
-	$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/node/' . $id;
-	$this->_headers[]='Content-Type: application/' . $this->format;
-	return $this->execute('GET');
+		$this->_url=$this->_protocol . $this->_host . '/' . $this->_version . '/node/' . $id;
+		$this->_headers[]='Content-Type: application/' . $this->format;
+		return $this->execute('GET');
 	}
 	/**
 	* Authentication to GRIDBLAZE API
@@ -122,14 +122,14 @@ class GBClass
 	*/ 
 	public function auth()
 	{
-	if($this->_token===null){
-	$this->_url=$this->_protocol . $this->_host . '/';
-	$this->_headers=array();
-	$this->_headers[]='X-Auth-User: ' . $this->_appid;
-	$this->_headers[]='X-Auth-Key: ' . $this->_appkey;
-	$data=$this->execute('GET', true);
-	if($this->_token===null) $this->_token=$data['headers']['X-Auth-Token'];
-	}
+		if($this->_token===null){
+			$this->_url=$this->_protocol . $this->_host . '/';
+			$this->_headers=array();
+			$this->_headers[]='X-Auth-User: ' . $this->_appid;
+			$this->_headers[]='X-Auth-Key: ' . $this->_appkey;
+			$data=$this->execute('GET', true);
+			if($this->_token===null) $this->_token=$data['headers']['X-Auth-Token'];
+		}
 	}
 	/**
 	* Get list of objects and/or directories
@@ -146,20 +146,20 @@ class GBClass
 	*/ 
 	public function listing($directory='/', $content='')
 	{
-	if($this->_token===null){
-	$this->auth();
-	}
-	switch($content){
-	case self::OBJECTS:
-	return $this->getListObject($directory);
-	break;
-	case self::DIRECTORIES:
-	return $this->getListDirectory($directory);
-	break;
-	default:
-	return $this->getAllList($directory);
-	break;
-	}
+		if($this->_token===null){
+			$this->auth();
+		}
+		switch($content){
+			case self::OBJECTS:
+				return $this->getListObject($directory);
+				break;
+			case self::DIRECTORIES:
+				return $this->getListDirectory($directory);
+				break;
+			default:
+				return $this->getAllList($directory);
+				break;
+		}
 	}
 	/**
 	* Deleting a directory
