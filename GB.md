@@ -96,7 +96,7 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
 	<td>
 		Digest::SHA256.hexdigest( appid + appkey + return_url + directory + datetime + option + enable_auth + meta )
 	</td>
-    <td style="text-align: left">This is the generated value out from other parameters above.</td>
+    <td style="text-align: left">Generated value out from other parameters above.</td>
   </tr>
 </table>
 
