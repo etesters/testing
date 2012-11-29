@@ -44,6 +44,26 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
     <td>datetime</td>
     <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
+  <tr>
+    <td>datetime</td>
+    <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
+  </tr>
+  <tr>
+    <td>datetime</td>
+    <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
+  </tr>
+  <tr>
+    <td>datetime</td>
+    <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
+  </tr>
+  <tr>
+    <td>datetime</td>
+    <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
+  </tr>
+  <tr>
+    <td>datetime</td>
+    <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
+  </tr>
 </table>
 
 Create the signature as a hash of these fields, appended together and delimited by a `.`. Using Ruby as an example you can create a signature like this:
