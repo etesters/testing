@@ -104,6 +104,9 @@ Create the signature as a hash of these fields, appended together and delimited 
 	enable_auth = 'no'
 	meta = "{'name': 'myfile', 'type': 'just a file'}"
 	signature = Digest::SHA256.hexdigest( appid + appkey + return_url + directory + datetime.to_s() + option + enable_auth + meta )
+	
+	
+asdfadsfdasfdasfdas
 
 ### Server Side Code
 
