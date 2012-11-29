@@ -33,7 +33,7 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
 
 <table>
   <tr>
-    <th>Variable</th>
+    <th>Parameter</th>
 	<th>?</th>
 	<th>Value</th>
     <th>Description</th>
