@@ -27,7 +27,7 @@ These values will be used by your app at run time to generate a signature to aut
 
 Direct uploading uses a simple HTTP form post to upload files from users directly to the GRIDBLAZE storage platform, bypassing your application dynos on Heroku. Files will automatically be routed to the closest storage node to the user and kept in that location for future access.
 
-### HTML Form Parameters
+### HTML Upload Form Parameters
 
 GRIDBLAZE requires that you generate a unique signature for every submitted upload. The signature is composed of the GRIDBLAZE app id and key and the following user-specified fields:
 
@@ -74,7 +74,7 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
 	<td>
 		autogen | replace | reject | default
 	</td>
-    <td style="text-align: left"></td>
+    <td style="text-align: left">This parameter value will be use if duplicates file on the same directory.</td>
   </tr>
   <tr>
     <td>enable_auth</td>
