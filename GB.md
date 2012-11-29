@@ -97,6 +97,18 @@ Create the signature as a hash of these fields, appended together and delimited 
     :::ruby
     message = "#{ENV['GRIDBLAZE_APPID']}.#{ENV['GRIDBLAZE_APPKEY']}.#{return_url}.#{datetime}"
     signature = Digest::SHA256.hexdigest(message)
+	
+	
+	appid = ENV['GRIDBLAZE_APPID']
+	appkey = ENV['GRIDBLAZE_APPKEY']
+	return_url = 'http://www.domain.tld/uploadSuccess'
+	directory = '/' # The directory to place the file. Eg. /mydirectory/
+	datetime = Time.now.to_i # Epoch time format at the generation of the signature	
+	option = 'default'
+	enable_auth = 'no'
+	meta = "{'name': 'myfile', 'type': 'just a file'}" # Meta text data 	
+	prepSignature = appid + appkey + return_url + directory + datetime.to_s() + option + enable_auth + meta	
+	signature = Digest::SHA256.hexdigest(prepSignature)
 
 ### Server Side Code
 
