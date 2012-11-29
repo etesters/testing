@@ -81,16 +81,16 @@ The resulting HTML form generator should look like this.
 
     :::html
     <form action='http://upload.gridblaze.com' enctype='multipart/form-data' method='post'>
-	<input type="file" name="file">		
+		<input type="file" name="file">		
         <input id="enable_auth" type="hidden"  name="enable_auth" value='<%= enable_auth %>' />
-	<input id="appid"       type="hidden"  name="appid"       value='<%= appid %>' />
+		<input id="appid"       type="hidden"  name="appid"       value='<%= appid %>' />
         <input id="return_url"  type="hidden"  name="return_url"  value='<%= return_url %>' />
         <input id="directory"   type="hidden"  name="directory"   value='<%= directory %>' />
         <input id="options"     type="hidden"  name="options"     value='<%= options %>' />
         <input id="meta"        type="hidden"  name="meta"        value='<%= URI::encode(meta) %>' />
         <input id="datetime"    type="hidden"  name="datetime"    value='<%= datetime %>' />
         <input id="signature"   type="hidden"  name="signature"   value='<%= signature; %>' />		
-	<input type="submit" name="upload" value="submit">
+		<input type="submit" name="upload" value="submit">
     </form>
 
 ### Upload callback
