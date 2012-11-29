@@ -95,15 +95,15 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
 Create the signature as a hash of these fields, appended together and delimited by a `.`. Using Ruby as an example you can create a signature like this:
 
     :::ruby
-	appid = ENV['GRIDBLAZE_APPID']
-	appkey = ENV['GRIDBLAZE_APPKEY']
-	return_url = 'http://www.domain.tld/uploadSuccess'
-	directory = '/'
-	datetime = Time.now.to_i.to_s()
-	option = 'default'
+	appid 		= ENV['GRIDBLAZE_APPID']
+	appkey 		= ENV['GRIDBLAZE_APPKEY']
+	return_url 	= 'http://www.domain.tld/uploadSuccess'
+	directory 	= '/'
+	datetime 	= Time.now.to_i.to_s()
+	option	 	= 'default'
 	enable_auth = 'no'
-	meta = "{'name': 'myfile', 'type': 'just a file'}"
-	signature = Digest::SHA256.hexdigest( appid + appkey + return_url + directory + datetime + option + enable_auth + meta )
+	meta 		= "{'name': 'myfile', 'type': 'just a file'}"
+	signature 	= Digest::SHA256.hexdigest( appid + appkey + return_url + directory + datetime + option + enable_auth + meta )
 	
 	
 asdfadsfdasfdasfdas
