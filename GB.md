@@ -111,25 +111,6 @@ NOTE : The sequence of the variable for generating the signature is sensitive, t
 	:::ruby
 	appid + appkey + return_url + directory + datetime + option + enable_auth + meta
 
-### Server Side Code
-
-On top of the signature, your code will need to generate a few other variables that will need to be sent to the GRIDBLAZE system after the user POSTs the file.
-
-    :::ruby
-    appid = ENV['GRIDBLAZE_APPID']
-    secret_key = ENV['GRIDBLAZE_APPKEY']
-    return_url = 'http://www.mydomain.tld' # The URL web hook that GRIDBLAZE will call to confirm a successful upload and push the access information for file. It should be a full URL including "http://"
-    directory = '/' #The directory to place the file. Eg,/mydirectory/
-    meta = "{'name': 'myfile', 'type': 'just a file'}" #Meta text data 
-    option = 'default'
-    enable_auth = 'no'
-
-    # Option include autogen, replace, reject, default. 
-    upload_url = "http://upload.gridblaze.com" # Fixed, do not change 	
-    datetime = Time.now.to_i # Epoch time format at the generation of the signature
-    signature = Digest::SHA256.hexdigest(appid + secret_key + return_url + directory + datetime.to_s() + option + enable_auth + meta)
-
-
 ### HTML form
 
 <div class="callout" markdown="1">
