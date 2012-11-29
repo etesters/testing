@@ -182,13 +182,6 @@ Managing and listing files stored on the GRIDBLAZE network can be done through t
 
 This is the simplest method and would only require you to login to the GRIDBLAZE command dashboard and select "Object Manager". You will be able to upload/list/delete/rename all files stored on the GRIDBLAZE network associated with your app key. Files might be in different storage nodes but in the object manager, you will view all files in a single "disk view".
 
-### API
-
-Use command line or GUI tools like Cyberduck to connect to the storage network using the OpenStack API standards.
-
-    :::html
-    https://api.gridblaze.com/v1
-
 ### WebDAV
 
 This features is still under development however you are welcome to Alpha test it by connecting to our WebDAV server on:
