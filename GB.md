@@ -64,6 +64,9 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
   </tr>
   <tr>
     <td>options</td>
+	<td>
+		autogen | replace | reject | default
+	</td>
     <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
   <tr>
