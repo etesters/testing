@@ -33,15 +33,23 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
 
 <table>
   <tr>
-    <th>Name</th>
     <th>Variable</th>
+    <th>Description</th>
   </tr>
   <tr>
-    <td>return_url</td>
+    <td>appid</td>
     <td style="text-align: left">The URL web hook that GRIDBLAZE will call to confirm the successful upload and push the URL to access the file. It should be a full URL including "http://"</td>
   </tr>
   <tr>
-    <td>datetime</td>
+    <td>appkey</td>
+    <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
+  </tr>
+  <tr>
+    <td>return_url</td>
+    <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
+  </tr>
+  <tr>
+    <td>directory</td>
     <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
   <tr>
@@ -49,19 +57,15 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
     <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
   <tr>
-    <td>datetime</td>
+    <td>options</td>
     <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
   <tr>
-    <td>datetime</td>
+    <td>enable_auth</td>
     <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
   <tr>
-    <td>datetime</td>
-    <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
-  </tr>
-  <tr>
-    <td>datetime</td>
+    <td>meta</td>
     <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
 </table>
