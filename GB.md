@@ -100,6 +100,8 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
   </tr>
 </table>
 
+### Generate Upload Signature
+
 Create the signature as a hash of these fields, appended together and delimited by a `.`. Using Ruby as an example you can create a signature like this:
 
     :::ruby
