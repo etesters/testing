@@ -105,7 +105,6 @@ Create the signature as a hash of these fields, appended together and delimited 
 	meta 		= "{'name': 'myfile', 'type': 'just a file'}"
 	signature 	= Digest::SHA256.hexdigest( appid + appkey + return_url + directory + datetime + option + enable_auth + meta )
 	
-	
 NOTE : The sequence of the variable for generating the signature is sensitive, that you should follow.
 
 	:::ruby
@@ -121,16 +120,16 @@ The resulting HTML form generator should look like this.
 
     :::html
     <form action='http://upload.gridblaze.com' enctype='multipart/form-data' method='post'>
-		<input type="file" name="file">		
-        <input id="enable_auth" type="hidden"  name="enable_auth" value='<%= enable_auth %>' />
-		<input id="appid"       type="hidden"  name="appid"       value='<%= appid %>' />
-        <input id="return_url"  type="hidden"  name="return_url"  value='<%= return_url %>' />
-        <input id="directory"   type="hidden"  name="directory"   value='<%= directory %>' />
-        <input id="options"     type="hidden"  name="options"     value='<%= options %>' />
-        <input id="meta"        type="hidden"  name="meta"        value='<%= URI::encode(meta) %>' />
-        <input id="datetime"    type="hidden"  name="datetime"    value='<%= datetime %>' />
-        <input id="signature"   type="hidden"  name="signature"   value='<%= signature; %>' />		
-		<input type="submit" name="upload" value="submit">
+		<input type="file"    name="file">		
+        <input type="hidden"  name="enable_auth" value='<%= enable_auth %>' 		id="enable_auth" />
+		<input type="hidden"  name="appid"       value='<%= appid %>' 				id="appid" />
+        <input type="hidden"  name="return_url"  value='<%= return_url %>' 			id="return_url" />
+        <input type="hidden"  name="directory"   value='<%= directory %>' 			id="directory" />
+        <input type="hidden"  name="options"     value='<%= options %>' 			id="options" />
+        <input type="hidden"  name="meta"        value='<%= URI::encode(meta) %>' 	id="meta" />
+        <input type="hidden"  name="datetime"    value='<%= datetime %>' 			id="datetime" />
+        <input type="hidden"  name="signature"   value='<%= signature; %>' 			id="signature" />		
+		<input type="submit"  name="upload" 	 value="submit">
     </form>
 
 NOTE : For the 'optional' parameters if not set, you don't have to include it in the HTML form generated.
