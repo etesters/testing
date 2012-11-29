@@ -106,7 +106,7 @@ Create the signature as a hash of these fields, appended together and delimited 
 	signature 	= Digest::SHA256.hexdigest( appid + appkey + return_url + directory + datetime + option + enable_auth + meta )
 	
 	
-NOTE : The sequence of the variable for generating the signature should follow.
+NOTE : The sequence of the variable for generating the signature is sensitive, that you should follow.
 
 	:::ruby
 	appid + appkey + return_url + directory + datetime + option + enable_auth + meta
