@@ -90,6 +90,14 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
 	</td>
     <td style="text-align: left"></td>
   </tr>
+  <tr>
+    <td>signature</td>
+	<td>Mandatory</td>
+	<td>
+		Digest::SHA256.hexdigest( appid + appkey + return_url + directory + datetime + option + enable_auth + meta )
+	</td>
+    <td style="text-align: left">This is the generated value out from other parameters above.</td>
+  </tr>
 </table>
 
 Create the signature as a hash of these fields, appended together and delimited by a `.`. Using Ruby as an example you can create a signature like this:
