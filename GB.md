@@ -99,11 +99,11 @@ Create the signature as a hash of these fields, appended together and delimited 
 	appkey = ENV['GRIDBLAZE_APPKEY']
 	return_url = 'http://www.domain.tld/uploadSuccess'
 	directory = '/'
-	datetime = Time.now.to_i
+	datetime = Time.now.to_i.to_s()
 	option = 'default'
 	enable_auth = 'no'
 	meta = "{'name': 'myfile', 'type': 'just a file'}"
-	signature = Digest::SHA256.hexdigest( appid + appkey + return_url + directory + datetime.to_s() + option + enable_auth + meta )
+	signature = Digest::SHA256.hexdigest( appid + appkey + return_url + directory + datetime + option + enable_auth + meta )
 	
 	
 asdfadsfdasfdasfdas
