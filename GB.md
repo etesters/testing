@@ -133,6 +133,8 @@ The resulting HTML form generator should look like this.
 		<input type="submit" name="upload" value="submit">
     </form>
 
+NOTE : For the 'optional' parameters if not set, you don't have to include it in the HTML form generated.
+	
 ### Upload callback
 
 After a user uploads a file to the storage network, GRIDBLAZE will call the return_url that you provided with the URL to access the file, the file size and any other form attributes that you sent along with the form post.
