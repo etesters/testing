@@ -88,7 +88,7 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
 	<td>
 		{'name': 'myfile', 'type': 'just a file'}
 	</td>
-    <td style="text-align: left"></td>
+    <td style="text-align: left">JSON encoded string of object metadata.</td>
   </tr>
   <tr>
     <td>signature</td>
