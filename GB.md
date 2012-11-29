@@ -165,7 +165,7 @@ Here's an example code of the return_url
 
 ## GRIDBLAZE API
 
-GRIDBLAZE API is built on top of the [OpenStack Swift API](http://www.openstack.org/software/openstack-storage/) and it's compatible with [Amazon S3](http://docs.amazonwebservices.com/AmazonS3/latest/API/Welcome.html). Connecting to the API is done through the following host.
+GRIDBLAZE API is built on top of the [OpenStack Swift API](http://www.openstack.org/software/openstack-storage/) and it's compatible with [Amazon S3 API](http://docs.amazonwebservices.com/AmazonS3/latest/API/Welcome.html). Connecting to the API is done through the following host.
 
     :::html
     https://api.gridblaze.com/v1
