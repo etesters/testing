@@ -34,48 +34,57 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
 <table>
   <tr>
     <th>Variable</th>
+	<th>?</th>
 	<th>Value</th>
     <th>Description</th>
   </tr>
   <tr>
-    <td>appid ( Mandatory )</td>
+    <td>appid</td>
+	<td>Mandatory</td>
 	<td>ENV['GRIDBLAZE_APPID']</td>
     <td style="text-align: left">The URL web hook that GRIDBLAZE will call to confirm the successful upload and push the URL to access the file. It should be a full URL including "http://"</td>
   </tr>
   <tr>
-    <td>appkey ( Mandatory )</td>
+    <td>appkey</td>
+	<td>Mandatory</td>
 	<td>ENV['GRIDBLAZE_APPKEY']</td>
     <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
   <tr>
-    <td>return_url ( Mandatory )</td>
+    <td>return_url</td>
+	<td>Mandatory</td>
 	<td>http://www.domain.tld/listener/</td>
     <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
   <tr>
-    <td>directory ( Optional )</td>
+    <td>directory</td>
+	<td>Optional</td>
 	<td>/location/for/the/object/</td>
     <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
   <tr>
-    <td>datetime ( Mandatory )</td>
+    <td>datetime</td>
+	<td>Mandatory</td>
 	<td>Time.now.to_i</td>
     <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
   <tr>
-    <td>options ( Optional )</td>
+    <td>options</td>
+	<td>Optional</td>
 	<td>
 		autogen | replace | reject | default
 	</td>
     <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
   <tr>
-    <td>enable_auth ( Optional )</td>
+    <td>enable_auth</td>
+	<td>Optional</td>
 	<td>yes | no</td>
     <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
   <tr>
-    <td>meta ( Optional )</td>
+    <td>meta</td>
+	<td>Optional</td>
 	<td>
 		{'name': 'myfile', 'type': 'just a file'}
 	</td>
