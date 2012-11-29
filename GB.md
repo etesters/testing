@@ -40,19 +40,19 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
   </tr>
   <tr>
     <td>appid</td>
-	<td>Mandatory</td>
+	<td>Required</td>
 	<td>ENV['GRIDBLAZE_APPID']</td>
     <td style="text-align: left">Your GRIDBLAZE application id.</td>
   </tr>
   <tr>
     <td>appkey</td>
-	<td>Mandatory</td>
+	<td>Required</td>
 	<td>ENV['GRIDBLAZE_APPKEY']</td>
     <td style="text-align: left">Your GRIDBLAZE application key.</td>
   </tr>
   <tr>
     <td>return_url</td>
-	<td>Mandatory</td>
+	<td>Required</td>
 	<td>http://www.domain.tld/uploadSuccess</td>
     <td style="text-align: left">The URL web hook that GRIDBLAZE will call to confirm the successful upload and push the URL to access the file. It should be a full URL including "http://"</td>
   </tr>
@@ -64,7 +64,7 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
   </tr>
   <tr>
     <td>datetime</td>
-	<td>Mandatory</td>
+	<td>Required</td>
 	<td>Time.now.to_i</td>
     <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
