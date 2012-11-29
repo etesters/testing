@@ -170,7 +170,7 @@ GRIDBLAZE API is built on top of the [OpenStack Swift API](http://www.openstack.
     :::html
     https://api.gridblaze.com
 
-You can use [Cyberduck](http://cyberduck.ch/) or [CloudBerry](http://www.cloudberrylab.com/) and other known class libraries (S3.php, Boto) to connect with GRIDBLAZE API or you can find more details on [GRIDBLAZE API Document](http://developer.gridblaze.com/api_documentation.php).
+You can use [Cyberduck](http://cyberduck.ch/), [CloudBerry](http://www.cloudberrylab.com/) and other known class libraries (S3.php, Boto) to connect with GRIDBLAZE API or you can find more details on [GRIDBLAZE API Document](http://developer.gridblaze.com/api_documentation.php).
 
 Connecting to GRIDBLAZE API will route requests to the closest API node. Unlike other APIs, our API servers are distributed to allow for lower latency and automated PUT routing to the closest node.
 
