@@ -80,7 +80,7 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
     <td>enable_auth</td>
 	<td>Optional</td>
 	<td>yes | no</td>
-    <td style="text-align: left"></td>
+    <td style="text-align: left">This parameter value will be use if the object need for authenticatoin at server for each download.</td>
   </tr>
   <tr>
     <td>meta</td>
@@ -88,7 +88,7 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
 	<td>
 		{'name': 'myfile', 'type': 'just a file'}
 	</td>
-    <td style="text-align: left">JSON encoded string of object metadata.</td>
+    <td style="text-align: left">JSON encoded string of metadata of an object.</td>
   </tr>
   <tr>
     <td>signature</td>
