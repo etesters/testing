@@ -33,70 +33,70 @@ GRIDBLAZE requires that you generate a unique signature for every submitted uplo
 
 <table>
   <tr>
-    <th><span style="font-size: 11px;">Parameter</span></th>
-	<th><span style="font-size: 11px;">?</span></th>
-	<th><span style="font-size: 11px;">Value</span></th>
-    <th><span style="font-size: 11px;">Description</span></th>
+    <th>Parameter</th>
+	<th>?</th>
+	<th>Value</th>
+    <th>Description</th>
   </tr>
   <tr>
-    <td><span style="font-size: 11px;">appid</span></td>
-	<td><span style="font-size: 11px;">Required</span></td>
-	<td><span style="font-size: 11px;">ENV['GRIDBLAZE_APPID']</span></td>
-    <td style="text-align: left">Your GRIDBLAZE application id.</span></td>
+    <td>appid</td>
+	<td>Required</td>
+	<td>ENV['GRIDBLAZE_APPID']</td>
+    <td style="text-align: left">Your GRIDBLAZE application id.</td>
   </tr>
   <tr>
-    <td><span style="font-size: 11px;">appkey</span></td>
-	<td><span style="font-size: 11px;">Required</span></td>
-	<td><span style="font-size: 11px;">ENV['GRIDBLAZE_APPKEY']</span></td>
-    <td style="text-align: left">Your GRIDBLAZE application key.</span></td>
+    <td>appkey</td>
+	<td>Required</td>
+	<td>ENV['GRIDBLAZE_APPKEY']</td>
+    <td style="text-align: left">Your GRIDBLAZE application key.</td>
   </tr>
   <tr>
-    <td><span style="font-size: 11px;">return_url</span></td>
-	<td><span style="font-size: 11px;">Required</span></td>
-	<td><span style="font-size: 11px;">http://www.domain.tld/uploadSuccess</span></td>
-    <td style="text-align: left">The URL web hook that GRIDBLAZE will call to confirm the successful upload and push the URL to access the file. It should be a full URL including "http://"</span></td>
+    <td>return_url</td>
+	<td>Required</td>
+	<td>http://www.domain.tld/uploadSuccess</td>
+    <td style="text-align: left">The URL web hook that GRIDBLAZE will call to confirm the successful upload and push the URL to access the file. It should be a full URL including "http://"</td>
   </tr>
   <tr>
-    <td><span style="font-size: 11px;">directory</span></td>
-	<td><span style="font-size: 11px;">Optional</span></td>
-	<td><span style="font-size: 11px;">/location/for/the/object/</span></td>
-    <td style="text-align: left">The *nix style directory.</span></td>
+    <td>directory</td>
+	<td>Optional</td>
+	<td>/location/for/the/object/</td>
+    <td style="text-align: left">The *nix style directory.</td>
   </tr>
   <tr>
-    <td><span style="font-size: 11px;">datetime</span></td>
-	<td><span style="font-size: 11px;">Required</span></td>
-	<td><span style="font-size: 11px;">Time.now.to_i</span></td>
-    <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</span></td>
+    <td>datetime</td>
+	<td>Required</td>
+	<td>Time.now.to_i</td>
+    <td style="text-align: left">The unix epoch formatted datetime when the page is generated as encoded in the signature. Note the upload has to happen within 24hrs of this date/time.</td>
   </tr>
   <tr>
-    <td><span style="font-size: 11px;">options</span></td>
-	<td><span style="font-size: 11px;">Optional</span></td>
-	<td><span style="font-size: 11px;">
+    <td>options</td>
+	<td>Optional</td>
+	<td>
 		autogen | replace | reject | default
-	</span></td>
-    <td style="text-align: left">This parameter value will be use if duplicates file on the same directory.</span></td>
+	</td>
+    <td style="text-align: left">This parameter value will be use if duplicates file on the same directory.</td>
   </tr>
   <tr>
-    <td><span style="font-size: 11px;">enable_auth</span></td>
-	<td><span style="font-size: 11px;">Optional</span></td>
-	<td><span style="font-size: 11px;">yes | no</span></td>
-    <td style="text-align: left">This parameter value will be use if the object need for authenticatoin at server for each download.</span></td>
+    <td>enable_auth</td>
+	<td>Optional</td>
+	<td>yes | no</td>
+    <td style="text-align: left">This parameter value will be use if the object need for authenticatoin at server for each download.</td>
   </tr>
   <tr>
-    <td><span style="font-size: 11px;">meta</span></td>
-	<td><span style="font-size: 11px;">Optional</span></td>
-	<td><span style="font-size: 11px;">
+    <td>meta</td>
+	<td>Optional</td>
+	<td>
 		{'name': 'myfile', 'type': 'just a file'}
-	</span></td>
-    <td style="text-align: left">JSON encoded string of metadata of an object.</span></td>
+	</td>
+    <td style="text-align: left">JSON encoded string of metadata of an object.</td>
   </tr>
   <tr>
-    <td><span style="font-size: 11px;">signature</span></td>
-	<td><span style="font-size: 11px;">Mandatory</span></td>
-	<td><span style="font-size: 11px;">
+    <td>signature</td>
+	<td>Mandatory</td>
+	<td>
 		Digest::SHA256.hexdigest( appid + appkey + return_url + directory + datetime + option + enable_auth + meta )
-	</span></td>
-    <td style="text-align: left">Generated value out from other parameters above.</span></td>
+	</td>
+    <td style="text-align: left">Generated value out from other parameters above.</td>
   </tr>
 </table>
 
