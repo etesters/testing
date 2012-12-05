@@ -1,4 +1,4 @@
-GRIDBLAZE is a supercharged object storage platform for user generated content like images and files. With over 15 storage nodes spread globally and smart routing, user uploaded files are uploaded at 4 times the speed to storage endpoints close to your users. In reverse, downloads are made blazingly fast as well, as data is already stored in close proximity to the requester.
+By Erson : GRIDBLAZE is a supercharged object storage platform for user generated content like images and files. With over 15 storage nodes spread globally and smart routing, user uploaded files are uploaded at 4 times the speed to storage endpoints close to your users. In reverse, downloads are made blazingly fast as well, as data is already stored in close proximity to the requester.
 
 The storage platform supports ingest and access through regular HTTP via POST and GET commands respectively. An alternative method to interact with storage will be through the OpenStack compatible API or web based file manager.
 
