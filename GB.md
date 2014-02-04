@@ -1,6 +1,6 @@
-GRIDBLAZE is a supercharged object storage platform for user generated content like images and files. With over 15 storage nodes spread globally and smart routing, user uploaded files are uploaded at 4 times the speed to storage endpoints close to your users. In reverse, downloads are made blazingly fast as well, as data is already stored in close proximity to the requester.
+GRIDBLAZE is a supercharged object storage platform for user generated content like images and files. With over 15 storage nodes spread globally and smart routing, user uploaded files are uploaded fast to storage endpoints close to your users reducing latency and increasing bandwidth. In reverse, downloads are made blazingly fast as well, as data is already stored in close proximity to the requester.
 
-The storage platform supports ingest and access through regular HTTP via POST and GET commands respectively. An alternative method to interact with storage will be through the OpenStack compatible API or web based file manager.
+The storage platform supports ingest and access through regular HTTP via POST and GET commands respectively. An alternative method to interact with storage will be through the S3 and OpenStack compatible API or web based file manager.
 
 ## Provisioning the add-on
 
@@ -14,7 +14,7 @@ To use GRIDBLAZE on Heroku, install the GRIDBLAZE add-on:
     $ heroku addons:add gridblaze
     -----> Adding GRIDBLAZE to sharp-mountain-4005... done, v112 (free)
 
-To begin using the storage platform you will need to get an id that is automatically generated for each account. Each id will also have a corresponding key which should be kept secret.
+To begin using the storage platform you will need to get an ID that is automatically generated for each account. Each ID will also have a corresponding key which should be kept secret.
 
     :::term
     $ heroku config | grep GRIDBLAZE
@@ -29,7 +29,7 @@ Direct uploading uses a simple HTTP form post to upload files from users directl
 
 ### HTML Upload Form Parameters
 
-GRIDBLAZE requires that you generate a unique signature for every submitted upload. The signature is composed of the GRIDBLAZE app id and key and the following user-specified fields:
+GRIDBLAZE requires that you generate a unique signature for every submitted upload. The signature is composed of the GRIDBLAZE app ID and key and the following user-specified fields:
 
 <table>
   <tr>
@@ -142,14 +142,14 @@ The resulting HTML form generator should look like this.
 		<input type="submit"  name="upload" 	 value="submit">		
     </form>
 
-NOTE : For the 'optional' parameters if not set, you don't have to include it in the HTML form generated.
+NOTE : If the 'optional' parameters are not set, you don't have to include it in the HTML form generated or signature.
 	
 ### Upload callback
 
-After a user uploads a file to the storage network, GRIDBLAZE will call the return_url that you provided with the URL to access the file, the file size and any other form attributes that you sent along with the form post.
+After a user uploads a file to the storage network, GRIDBLAZE will call the return_url that you provided to access the file, the file size and any other form attributes that you sent along with the form post will also be POSTed to that URL.
 
 <p class="note" markdown="1">
-Form fields not specific to GRIDBLAZE will get resubmitted back to your `return_url` location, allowing GRIDBLAZE to handle the file submission and your application to handle the other aspects of the form in a way that provides seamless user experience.
+Form fields not specific to GRIDBLAZE will get resubmitted back to your `return_url` location, allowing GRIDBLAZE to handle the file submission and your application to handle the other aspects of the form in a way that provides a seamless user experience.
 </p>
 
 Files uploaded to the GRIDBLAZE storage network will have URLs resembling the following format:
@@ -170,7 +170,7 @@ GRIDBLAZE API is built on top of the [OpenStack Swift API](http://www.openstack.
     :::html
     https://api.gridblaze.com
 
-You can use [Cyberduck](http://cyberduck.ch/), [CloudBerry](http://www.cloudberrylab.com/) and other known class libraries (S3.php, Boto) to connect with GRIDBLAZE API or you can find more details on [GRIDBLAZE API Document](http://developer.gridblaze.com/api_documentation.php).
+You can use [Cyberduck](http://cyberduck.ch/), [CloudBerry](http://www.cloudberrylab.com/) and other known class libraries (S3.php, Boto) to connect with GRIDBLAZE API or you can find more details on the [GRIDBLAZE Documentaion](http://developer.gridblaze.com/api_documentation.php).
 
 Connecting to GRIDBLAZE API will route requests to the closest API node. Unlike other APIs, our API servers are distributed to allow for lower latency and automated PUT routing to the closest node.
 
